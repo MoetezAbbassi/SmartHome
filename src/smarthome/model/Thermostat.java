@@ -74,7 +74,7 @@ public class Thermostat extends SmartDevice implements Controllable, EnergyConsu
     @Override
     public double getEnergyConsumption() {
         if (!isOn) return 0.0;
-        double basePower = 1500.0; // watts
+        double basePower = 1500.0; 
         if (energyMode.equals("ECO")) {
             basePower *= 0.6;
         }

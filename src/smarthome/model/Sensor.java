@@ -1,7 +1,7 @@
 package smarthome.model;
 
 public class Sensor extends SmartDevice {
-    private String sensorType; // MOTION, TEMPERATURE, SMOKE, etc.
+    private String sensorType; // MOTION, TEMPERATURE, SMOKE
     private boolean triggered;
     private String lastReading;
     

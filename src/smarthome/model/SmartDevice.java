@@ -4,7 +4,7 @@ public abstract class SmartDevice {
     protected String deviceId;
     protected String deviceName;
     protected boolean isOn;
-    protected String location; // Room name
+    protected String location; 
     
     public SmartDevice(String deviceId, String deviceName) {
         this.deviceId = deviceId;
@@ -12,12 +12,10 @@ public abstract class SmartDevice {
         this.isOn = false;
     }
     
-    // Abstract methods - must be implemented by subclasses
     public abstract void turnOn();
     public abstract void turnOff();
     public abstract String getStatus();
     
-    // Concrete methods
     public String getDeviceId() {
         return deviceId;
     }
@@ -46,12 +44,10 @@ public abstract class SmartDevice {
     }
 
 	public boolean isControllable() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 
 	public double getEnergyConsumption() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 }

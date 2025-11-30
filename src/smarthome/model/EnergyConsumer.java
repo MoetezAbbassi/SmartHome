@@ -1,7 +1,7 @@
 package smarthome.model;
 
 public interface EnergyConsumer {
-    double getEnergyConsumption(); // in watts
-    void setEnergyMode(String mode); // e.g., "ECO", "NORMAL", "HIGH"
+    double getEnergyConsumption(); 
+    void setEnergyMode(String mode);
 	boolean isControllable();
 }

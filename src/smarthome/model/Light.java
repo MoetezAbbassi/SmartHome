@@ -1,9 +1,9 @@
 package smarthome.model;
 
 public class Light extends SmartDevice implements EnergyConsumer, Controllable {
-    private int brightness; // 0-100
+    private int brightness;
     private String energyMode;
-    private static final double BASE_POWER = 10.0; // watts
+    private static final double BASE_POWER = 10.0;
     
     public Light(String deviceId, String deviceName) {
         super(deviceId, deviceName);
