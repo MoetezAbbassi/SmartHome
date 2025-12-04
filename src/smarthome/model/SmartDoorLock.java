@@ -4,17 +4,15 @@ public class SmartDoorLock extends SmartDevice {
 
     private boolean locked;
 
-    public SmartDoorLock(String id, String name) {
-        super(id, name);
-        this.locked = true; // default: door is locked
+    public SmartDoorLock(String deviceId, String deviceName) {
+        super(deviceId, deviceName);
+        this.locked = true; // default: locked
     }
 
-    // Lock the door
     public void lock() {
         this.locked = true;
     }
 
-    // Unlock the door
     public void unlock() {
         this.locked = false;
     }
@@ -25,22 +23,26 @@ public class SmartDoorLock extends SmartDevice {
 
     @Override
     public void turnOn() {
-        // In a smart lock, "turn on" can mean locking the door
-        this.locked = true;
-        this.on = true;
+        this.locked = true;   // locking the door
+        this.isOn = true;
     }
 
     @Override
     public void turnOff() {
-        // "turn off" can mean unlocking the door
-        this.locked = false;
-        this.on = false;
+        this.locked = false; // unlocking the door
+        this.isOn = false;
     }
 
     @Override
     public String getStatus() {
-        return "SmartDoorLock " + name + " is " +
-               (locked ? "LOCKED" : "UNLOCKED");
+        return String.format("Door '%s' is %s", 
+            deviceName,
+            locked ? "LOCKED" : "UNLOCKED"
+        );
+    }
+
+    @Override
+    public boolean isControllable() {
+        return true; // this device can be controlled
     }
 }
-

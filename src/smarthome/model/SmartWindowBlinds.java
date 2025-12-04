@@ -4,12 +4,11 @@ public class SmartWindowBlinds extends SmartDevice {
 
     private int openness; // 0 = closed, 100 = fully open
 
-    public SmartWindowBlinds(String id, String name) {
-        super(id, name);
-        this.openness = 0; // default: blinds closed
+    public SmartWindowBlinds(String deviceId, String deviceName) {
+        super(deviceId, deviceName);
+        this.openness = 0; // default: closed
     }
 
-    // Set blinds openness level (0–100)
     public void setOpenness(int value) {
         if (value < 0) value = 0;
         if (value > 100) value = 100;
@@ -22,24 +21,27 @@ public class SmartWindowBlinds extends SmartDevice {
 
     @Override
     public void turnOn() {
-        // Turning "on" opens the blinds fully
-        this.openness = 100;
-        this.on = true;
+        this.openness = 100; // open blinds fully
+        this.isOn = true;
     }
 
     @Override
     public void turnOff() {
-        // Turning "off" closes the blinds
-        this.openness = 0;
-        this.on = false;
+        this.openness = 0; // close blinds
+        this.isOn = false;
     }
 
     @Override
     public String getStatus() {
-        return "SmartWindowBlinds " + name + " are " +
-               (openness == 0 ? "CLOSED" :
-                openness == 100 ? "FULLY OPEN" :
-                "OPEN (" + openness + "%)");
+        return String.format("Blinds '%s' are %s (%d%% open)",
+            deviceName,
+            openness == 0 ? "CLOSED" : (openness == 100 ? "FULLY OPEN" : "PARTIALLY OPEN"),
+            openness
+        );
+    }
+
+    @Override
+    public boolean isControllable() {
+        return true;
     }
 }
-
