@@ -1,0 +1,50 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "MainApp",
+            "request": "launch",
+            "mainClass": "smarthome.main.MainApp",
+            "projectName": "SmartHome"
+        },
+        {
+            "type": "java",
+            "name": "SmartHomeGUI",
+            "request": "launch",
+            "mainClass": "smarthome.main.SmartHomeGUI",
+            "projectName": "SmartHome"
+        },
+        {
+            "type": "java",
+            "name": "TestDevices",
+            "request": "launch",
+            "mainClass": "smarthome.main.TestDevices",
+            "projectName": "SmartHome"
+        },
+        {
+            "type": "java",
+            "name": "TestHomeStructure",
+            "request": "launch",
+            "mainClass": "smarthome.main.TestHomeStructure",
+            "projectName": "SmartHome"
+        }
+        {
+            "type": "java",
+            "name": "Launch SmartHomeGUI",
+            "request": "launch",
+            "mainClass": "smarthome.main.SmartHomeGUI",
+            "vmArgs": "--module-path C:/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml"
+        }   
+    ]
+}
